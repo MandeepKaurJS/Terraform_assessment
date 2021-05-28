@@ -1,0 +1,5 @@
+remote_state_bucket = "terraform-remotestate-10-2020"
+remote_state_key = "layer1/infrastructure.tfstate"
+ec2_instancetype = "t2.micro"
+max_instance_size = "10"
+min_instance_size = "3"
