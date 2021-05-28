@@ -17,3 +17,7 @@ output "private_subnet1_id" {
 output "private_subnet2_id" {
     value = "${aws_subnet.private_subnet2.id}"
 }
+output "configuration_endpoint_address" {
+    value = "${aws_elasticache_replication_group.relication_group.configuration_endpoint_address}"
+}
+
