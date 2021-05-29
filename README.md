@@ -90,7 +90,7 @@ resource "aws_elasticache_replication_group" "relication_group" {
   Initializing a configuration directory downloads and installs the providers defined in the configuration, which in this case is the aws provider.
 - terraform plan- creates an execution plan. By default, creating a plan consists of:
    1. Reading the current state of any already-existing remote objects to make sure that the Terraform state is up-to-date.
-   2.Comparing the current configuration to the prior state and noting any differences.
+   2. Comparing the current configuration to the prior state and noting any differences.
    3. Proposing a set of change actions that should, if applied, make the remote objects match the configuration.
 
 - The terraform appply command executes the actions proposed in a Terraform plan.
