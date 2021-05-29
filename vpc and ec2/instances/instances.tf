@@ -137,7 +137,7 @@ data "aws_ami" "Launch_config_file" {
   }
 }
 //launch configuration for private ec2 instance
-resource "aws_launch_configuration" "private_ec2_config" {
+/* resource "aws_launch_configuration" "private_ec2_config" {
   image_id               = "ami-03657b56516ab7912"
   instance_type          = var.ec2_instancetype
   key_name               = var.key_pair_name
@@ -154,8 +154,8 @@ resource "aws_launch_configuration" "private_ec2_config" {
       export INSTANCE_ID=$(curl http://169.254.169.254/latest/metad-ata/instance-id)
       echo"<html><body><h1>hello from mandeep backend at instance <b>"$INSTANCE_ID"</b></h1></body></html>" > /var/www/html/index.html
   EOF
-}
-//launch configuration for private ec2 instance
+} */
+//launch configuration for public ec2 instance
 resource "aws_launch_configuration" "public_ec2_cconfig" {
   //image_id                    = "${data.aws_ami.Launch_config_file.id}"
   image_id                    = "ami-03657b56516ab7912"
@@ -201,7 +201,7 @@ resource "aws_elb" "webapp_load_balancer" {
   }
 }
 //creating load balancer for private webapp tier backend
-resource "aws_elb" "backend_load_balancer" {
+/*resource "aws_elb" "backend_load_balancer" {
   name = "Backend-load-balancer"
   internal = true
   security_groups = [
@@ -247,7 +247,7 @@ resource "aws_autoscaling_group" "ec2_private_autoSG" {
     propagate_at_launch = false
     value = "Production-Backend"
   }
-}
+}*/
 //creating an autoscaling group for public ec2 instance
 resource "aws_autoscaling_group" "ec2_public_autoSG" {
   name = "Production-webapp-autoSG"
@@ -286,7 +286,7 @@ resource "aws_autoscaling_policy" "webapp_production_scallingpolicy" {
   }
 }
 //creating autoscaling policy for private ec2 instance
-resource "aws_autoscaling_policy" "backend_production_Scalingpolicy" {
+/*resource "aws_autoscaling_policy" "backend_production_Scalingpolicy" {
   autoscaling_group_name = aws_autoscaling_group.ec2_private_autoSG
   name = "Production-backend-autoscalingpolicy"
   policy_type = "TargetTrackingScaling"
@@ -297,7 +297,7 @@ resource "aws_autoscaling_policy" "backend_production_Scalingpolicy" {
     }
     target_value = 80.0
   }
-}
+}*/
 //creating SNS topic for auto scaling notification
 resource "aws_sns_topic" "webapp_production_autoscalig_topicAlert" {
   display_name = "Webapp-AutoScaling-Topic"
