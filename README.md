@@ -14,7 +14,7 @@ To follow this tutorial you will need:
 aws configure
 ```
 - I created set of files used to describe infrastructure in Terraform is known as a Terraform configuration as well as variable files describing the values of resourses.
-Also created the *outputs.tf* files to get the *outputs* of resources like their Ids, Name etc. 
+Also created the **outputs.tf** files to get the **outputs** of resources like their Ids, Name etc. 
 # Example
 ```
 variable.tf
@@ -95,9 +95,10 @@ resource "aws_elasticache_replication_group" "relication_group" {
 
 - The terraform appply command executes the actions proposed in a Terraform plan.
 - I used these commands to provision the infrastructure on top of AWS Cloud. 
+
 | Command | Description |
 | --- | --- |
-| `terraform init` | To initlize the directory |
-| `terraform plan` | List all *new or modified* provisioned resourses |
-| `terraform apply` | Will create all the resourses on top of AWS cloud |
-| `terraform destroy` | Will cleanup everything which we created |
+| `terraform init`   | To initlize the directory                        |
+| `terraform plan`   | List all *new or modified* provisioned resourses |
+| `terraform apply`  | Will create all the resourses on top of AWS cloud|
+| `terraform destroy`| Will cleanup everything which we created         |
