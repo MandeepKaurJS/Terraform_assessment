@@ -305,7 +305,7 @@ resource "aws_sns_topic" "webapp_production_autoscalig_topicAlert" {
 }
 //creating SNS subscription for Sms to receive auto scalingnotification
 resource "aws_sns_topic_subscription" "webapp_prodution_autoscaling_sns_subcription" {
-  endpoint = "+2532176106"
+  endpoint = "your endpoint"
   protocol = "sms"
   topic_arn = aws_sns_topic.webapp_production_autoscalig_topicAlert
 }
